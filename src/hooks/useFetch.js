@@ -1,5 +1,7 @@
 import { useEffect, useState } from "react"
 
+//hacemos la variable caché
+const localCache = {};
 
 
 export const useFetch = (url) => {
@@ -26,6 +28,17 @@ export const useFetch = (url) => {
     }
 
     const getFetch = async () => {
+
+        if ( localCache[url]) {
+            console.log('Usando Caché')
+            setState({
+                data: localCache[url],
+                isLoading: false,
+                hasError: true,
+                error: null,
+            });
+            return;            
+        }
 
         setLoadingState();
         
@@ -55,6 +68,8 @@ export const useFetch = (url) => {
             error: null,
         });
 
+        //manejo del caché
+        localCache[url] = data;
     }
 
 
