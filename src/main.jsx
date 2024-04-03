@@ -9,10 +9,13 @@ import './index.css'
 //import { FormWithCustomHook } from './02-useEffect/FormWithCustomHook'
 //import { MultipleCustomHooks } from './03-examples/MultipleCustomHooks'
 //import { FocusScreen } from './04-useRef/FocusScreen'
-import { Memorize } from './06-memos/Memorize'
+// import { Memorize } from './06-memos/Memorize'
+// import { MemoHook } from './06-memos/MemoHook'
+// import { CallBackHook } from './06-memos/CallBackHook'
+import { Padre } from './07-tarea-memo/07-tarea-memo/Padre'
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   //<React.StrictMode>
-    <Memorize />
+    <Padre />
   //</React.StrictMode>,
 )
